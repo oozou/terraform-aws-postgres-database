@@ -46,6 +46,15 @@ variable "rds_db_identifier" {
   type        = string
 }
 
+variable "db_endpoint" {
+  description = "The endpoint of the db"
+  type        = string
+}
+variable "db_port" {
+  description = "The port of the db"
+  type        = number
+}
+
 # variable "db_instance_name_prefix" {
 #   description = "DB instance name prefix. eg., if passed 'test', the full db instance name would be test-read-write-instance"
 #   type        = string

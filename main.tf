@@ -29,6 +29,8 @@ module "rds_bootstrap" {
   db_password  = var.postgres_database.password
   // Secret which stores the Postgres DB Master Creds
   db_creds_secret_key = var.rds_secret_manager_secret_key
+  db_endpoint         = var.db_endpoint
+  db_port             = var.db_port
 
   custom_tags = var.custom_tags
 

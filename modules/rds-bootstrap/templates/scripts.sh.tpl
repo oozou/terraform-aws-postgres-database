@@ -8,9 +8,9 @@ sudo amazon-linux-extras install postgresql10
 sudo yum -y install jq
 
 dbCon=`aws secretsmanager get-secret-value --secret-id ${DB_CREDS_SECRET_KEY} --version-stage AWSCURRENT --region ${AWS_REGION} --output text --query '{SecretString:SecretString}'`
-export PGHOST=`echo "$dbCon" | jq -r '.host'`
+export PGHOST= ${DB_ENDPOINT}
 echo $PGHOST
-export PGPORT=`echo "$dbCon" | jq -r '.port'`
+export PGPORT= ${DB_PORT}
 echo $PGPORT
 export PGUSER=`echo "$dbCon" | jq -r '.username'`
 echo $PGUSER

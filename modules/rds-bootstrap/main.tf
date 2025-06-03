@@ -140,5 +140,7 @@ data "template_file" "user_data" {
     DB_CREDS_SECRET_KEY     = var.db_creds_secret_key
     DATABASE_USER           = var.db_user_name
     DATABASE_PASSWORD       = var.db_password
+    DB_ENDPOINT             = var.db_endpoint
+    DB_PORT                 = var.db_port
   }
 }
