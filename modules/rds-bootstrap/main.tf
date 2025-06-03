@@ -93,7 +93,7 @@ data "aws_iam_policy_document" "rds_bootstrap_access" {
     effect  = "Allow"
     actions = ["secretsmanager:GetSecretValue"]
 
-    resources = ["arn:aws:secretsmanager:${local.region-account}:secret:${var.db_creds_secret_key}*"]
+    resources = ["${var.db_creds_secret_key}*"]
   }
 
   statement {
